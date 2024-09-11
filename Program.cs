@@ -16,7 +16,7 @@ namespace TicTacToe
 
             do
             {
-                Quit = input.quit;
+                Quit = conds.quit;
                 string state = "";
                 if(nextPlayer % 2 == 0)
                 {
@@ -27,16 +27,11 @@ namespace TicTacToe
                     state = "O";
                 }
                 input.TakeInput(state);
-                table.tableElems[input.columnFinal - 1, input.rowFinal - 1] = state;
+                table.tableElems[input.rowFinal - 1, input.columnFinal - 1] = state;
                 table.MakeTable();
+                conds.decideIfConditionIsTrue(table, state);
                 nextPlayer++;
             }while(Quit == false);
-
-        void Victory(string winner)
-        {
-            Console.WriteLine($"{winner} nyert");
-            Quit = false;
-        }
         }
     }
 }
