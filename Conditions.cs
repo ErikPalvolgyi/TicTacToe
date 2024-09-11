@@ -1,0 +1,7 @@
+namespace TicTacToe
+{
+    class Conditions
+    {
+
+    }
+}
