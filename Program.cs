@@ -17,6 +17,8 @@ namespace TicTacToe
             do
             {
                 Quit = conds.quit;
+                if(Quit == false)
+                {
                 string state = "";
                 if(nextPlayer % 2 == 0)
                 {
@@ -31,6 +33,11 @@ namespace TicTacToe
                 table.MakeTable();
                 conds.decideIfConditionIsTrue(table, state);
                 nextPlayer++;
+                }
+                else
+                {
+                    continue;
+                }
             }while(Quit == false);
         }
     }
